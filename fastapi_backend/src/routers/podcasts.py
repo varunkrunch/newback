@@ -20,7 +20,7 @@ from dateutil import parser
 # Local imports
 from ..database import get_db_connection
 from ..models import StatusResponse
-from ..open_notebook.domain.models import Model
+from ..open_notebook.domain.models import ModelManager as Model
 from ..open_notebook.plugins.podcasts import PodcastEpisode, PodcastConfig
 from .models import conversation_styles, dialogue_structures, engagement_techniques, participant_roles
 from ..open_notebook.domain.notebook import Note, Source
