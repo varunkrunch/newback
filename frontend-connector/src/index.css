@@ -1,0 +1,577 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animations for enhanced UX */
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px hsl(var(--primary) / 0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+/* Panel-specific animations */
+@keyframes panelExpand {
+  from {
+    width: var(--panel-collapsed-width, 320px);
+    opacity: 0.8;
+  }
+  to {
+    width: var(--panel-expanded-width, 600px);
+    opacity: 1;
+  }
+}
+
+@keyframes panelCollapse {
+  from {
+    width: var(--panel-expanded-width, 600px);
+    opacity: 1;
+  }
+  to {
+    width: var(--panel-collapsed-width, 320px);
+    opacity: 0.8;
+  }
+}
+
+@keyframes panelSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100%) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes panelSlideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-100%) scale(0.95);
+  }
+}
+
+@keyframes contentFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tabSwitch {
+  from {
+    opacity: 0;
+    transform: translateY(5px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes staggerIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3) translateY(-20px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05) translateY(0);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px hsl(var(--primary) / 0.2);
+  }
+  50% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.4), 0 0 30px hsl(var(--primary) / 0.2);
+  }
+}
+
+@keyframes layoutTransition {
+  from {
+    opacity: 0.8;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes panelHide {
+  from {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-20px) scale(0.95);
+  }
+}
+
+@keyframes panelShow {
+  from {
+    opacity: 0;
+    transform: translateX(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes touchPress {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes touchRipple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Animation utility classes */
+.animate-slide-in-bottom {
+  animation: slideInFromBottom 0.5s ease-out;
+}
+
+.animate-slide-in-top {
+  animation: slideInFromTop 0.5s ease-out;
+}
+
+.animate-slide-in-left {
+  animation: slideInFromLeft 0.5s ease-out;
+}
+
+.animate-slide-in-right {
+  animation: slideInFromRight 0.5s ease-out;
+}
+
+.animate-fade-in-scale {
+  animation: fadeInScale 0.3s ease-out;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s infinite;
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.1), transparent);
+  background-size: 200px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Panel animation classes */
+.animate-panel-expand {
+  animation: panelExpand 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-panel-collapse {
+  animation: panelCollapse 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-panel-slide-in {
+  animation: panelSlideIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-panel-slide-out {
+  animation: panelSlideOut 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-content-fade-in {
+  animation: contentFadeIn 0.3s ease-out;
+}
+
+.animate-tab-switch {
+  animation: tabSwitch 0.2s ease-out;
+}
+
+.animate-stagger-in {
+  animation: staggerIn 0.4s ease-out;
+}
+
+.animate-bounce-in {
+  animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Staggered animation delays */
+.animate-stagger-1 { animation-delay: 0.1s; }
+.animate-stagger-2 { animation-delay: 0.2s; }
+.animate-stagger-3 { animation-delay: 0.3s; }
+.animate-stagger-4 { animation-delay: 0.4s; }
+.animate-stagger-5 { animation-delay: 0.5s; }
+.animate-stagger-6 { animation-delay: 0.6s; }
+
+/* Layout transition animations */
+.animate-layout-transition {
+  animation: layoutTransition 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-panel-hide {
+  animation: panelHide 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-panel-show {
+  animation: panelShow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Touch interaction animations */
+.animate-touch-press {
+  animation: touchPress 0.2s ease-out;
+}
+
+.animate-touch-ripple {
+  animation: touchRipple 0.6s ease-out;
+}
+
+/* Touch-friendly styles */
+.touch-manipulation {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Text overflow prevention */
+.text-container {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  min-width: 0;
+}
+
+.panel-content {
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Responsive text sizing for panel expansion */
+@media (max-width: 768px) {
+  .panel-content h1, .panel-content h2, .panel-content h3 {
+    font-size: clamp(0.875rem, 2.5vw, 1.125rem);
+  }
+  
+  .panel-content p, .panel-content span {
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+  }
+}
+
+/* Ensure text doesn't overflow in flex containers */
+.flex-container {
+  min-width: 0;
+  overflow: hidden;
+}
+
+.flex-container > * {
+  min-width: 0;
+}
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Core colors - NerdNest inspired palette */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 13%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13%;
+
+    --primary: 250 55% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 250 55% 65%;
+
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 0 0% 13%;
+
+    --muted: 240 5% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 250 55% 95%;
+    --accent-foreground: 250 55% 35%;
+
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 92%;
+    --ring: 250 55% 55%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(250 55% 55%), hsl(260 60% 65%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 98%));
+    --gradient-hero: linear-gradient(135deg, hsl(250 55% 95%), hsl(260 60% 98%));
+
+    /* Shadows */
+    --shadow-sm: 0 1px 3px hsl(0 0% 0% / 0.06);
+    --shadow-md: 0 4px 12px hsl(0 0% 0% / 0.08);
+    --shadow-lg: 0 10px 30px hsl(0 0% 0% / 0.12);
+    --shadow-glow: 0 0 40px hsl(250 55% 55% / 0.2);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 0 0% 13%;
+    --sidebar-primary: 250 55% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 5% 96%;
+    --sidebar-accent-foreground: 0 0% 13%;
+    --sidebar-border: 0 0% 92%;
+    --sidebar-ring: 250 55% 55%;
+
+    /* Transitions */
+    --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 240 10% 7%;
+    --foreground: 0 0% 95%;
+
+    --card: 240 8% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 240 8% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 250 55% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 250 55% 70%;
+
+    --secondary: 240 6% 15%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 240 6% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 250 30% 20%;
+    --accent-foreground: 250 55% 70%;
+
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 6% 20%;
+    --input: 240 6% 18%;
+    --ring: 250 55% 60%;
+
+    --sidebar-background: 240 8% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 250 55% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 6% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 240 6% 20%;
+    --sidebar-ring: 250 55% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    /* Improve mobile scrolling */
+    -webkit-overflow-scrolling: touch;
+    /* Prevent zoom on input focus on iOS */
+    font-size: 16px;
+  }
+
+  /* Improve touch targets on mobile */
+  button, [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Better mobile input experience */
+  input, textarea, select {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  /* Smooth scrolling for mobile */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Better mobile focus states */
+  *:focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Mobile-first responsive utilities */
+  .mobile-container {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  .mobile-padding {
+    @apply py-4 sm:py-6 lg:py-8;
+  }
+  
+  .mobile-text {
+    @apply text-sm sm:text-base lg:text-lg;
+  }
+  
+  .mobile-heading {
+    @apply text-xl sm:text-2xl lg:text-3xl xl:text-4xl;
+  }
+  
+  .mobile-grid {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+  }
+  
+  /* Mobile-friendly card */
+  .mobile-card {
+    @apply p-4 sm:p-6 rounded-lg border bg-card shadow-sm hover:shadow-md transition-shadow;
+  }
+  
+  /* Mobile-friendly button */
+  .mobile-button {
+    @apply h-10 sm:h-11 px-4 sm:px-6 text-sm sm:text-base font-medium rounded-md transition-colors;
+  }
+  
+  /* Mobile-friendly spacing */
+  .mobile-space-y {
+    @apply space-y-4 sm:space-y-6 lg:space-y-8;
+  }
+  
+  .mobile-gap {
+    @apply gap-3 sm:gap-4 lg:gap-6;
+  }
+}

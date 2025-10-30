@@ -1,0 +1,119 @@
+# Core Dependencies
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+aiofiles>=23.2.1
+python-dotenv>=1.0.1
+pyyaml>=6.0.0
+
+# Streamlit and UI (Optional - only needed if using Streamlit interface)
+streamlit>=1.45.0
+streamlit-tags>=1.2.8
+streamlit-scrollable-textbox>=0.0.3
+streamlit-monaco>=0.1.3
+
+# Database
+surrealdb>=1.0.0
+
+# NOTE: The following packages should be installed from GitHub:
+# pip install git+https://github.com/lfnovo/surreal-lite-py.git
+# pip install git+https://github.com/lfnovo/podcastfy.git
+# Or use install-dependencies.sh script which handles this automatically
+# -e ./surreal-lite-py
+# -e ./podcastfy
+
+# AI/ML Core
+pydantic>=2.9.2
+langchain>=0.3.3
+langchain-core>=0.3.3
+langchain-community>=0.3.3
+langchain-openai>=0.2.3
+langchain-anthropic>=0.2.3
+langgraph>=0.2.38
+langgraph-checkpoint-sqlite>=2.0.0
+
+# AI Providers
+langchain-ollama>=0.2.0
+langchain-google-genai>=2.0.1
+langchain-groq>=0.2.1
+langchain-mistralai>=0.2.1
+langchain-deepseek>=0.1.3
+langchain-google-vertexai>=2.0.10
+groq>=0.12.0
+
+# Content Processing
+content-core>=1.0.2
+ai-prompter>=0.3.0
+esperanto>=2.0.4
+python-magic>=0.4.27
+python-magic-bin>=0.4.14; sys_platform == 'win32'
+langchain-text-splitters>=0.3.0
+
+# Utilities
+requests>=2.31.0
+loguru>=0.7.2
+humanize>=4.11.0
+nest-asyncio>=1.6.0
+tomli>=2.0.2
+httpx[socks]>=0.27.0
+tiktoken>=0.8.0
+typing-extensions>=4.8.0
+python-dateutil>=2.8.2
+numpy>=1.22.4,<2.0.0
+packaging>=23.0
+mutagen>=1.47.0
+ai-prompter>=0.3.0
+aiofiles>=23.2.1
+content-core>=1.0.2
+esperanto>=2.0.4
+fastapi>=0.104.0
+groq>=0.12.0
+httpx[socks]>=0.27.0
+humanize>=4.11.0
+langchain-anthropic>=0.2.3
+langchain-community>=0.3.3
+langchain-deepseek>=0.1.3
+langchain-google-genai>=2.0.1
+langchain-google-vertexai>=2.0.10
+langchain-groq>=0.2.1
+langchain-mistralai>=0.2.1
+langchain-ollama>=0.2.0
+langchain-openai>=0.2.3
+langchain-text-splitters>=0.3.0
+langchain>=0.3.3
+langgraph-checkpoint-sqlite>=2.0.0
+langgraph>=0.2.38
+loguru>=0.7.2
+mutagen>=1.47.0
+nest-asyncio>=1.6.0
+numpy>=1.22.4,<2.0.0
+packaging>=23.0
+passlib[bcrypt]>=1.7.4
+pydantic>=2.9.2
+python-dateutil>=2.8.2
+python-dotenv>=1.0.1
+python-jose[cryptography]>=3.3.0
+python-magic-bin>=0.4.14; sys_platform == 'win32'
+python-magic>=0.4.27
+python-multipart>=0.0.6
+pyyaml>=6.0.0
+requests>=2.31.0
+streamlit-monaco>=0.1.3
+streamlit-scrollable-textbox>=0.0.3
+streamlit-tags>=1.2.8
+streamlit>=1.45.0
+surrealdb>=1.0.0
+tiktoken>=0.8.0
+tomli>=2.0.2
+typing-extensions>=4.8.0
+uvicorn[standard]>=0.24.0
+# Development Dependencies (optional)
+# ipykernel>=6.29.5
+# ruff>=0.5.5
+# mypy>=1.11.1
+# types-requests>=2.32.0.20241016
+# ipywidgets>=8.1.5
+# pre-commit>=4.1.0
+# watchdog>=6.0.0
